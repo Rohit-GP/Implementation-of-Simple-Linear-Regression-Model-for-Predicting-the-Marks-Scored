@@ -27,27 +27,31 @@ RegisterNumber: 24900185
 import numpy as np
 import matplotlib.pyplot as plt
 
-x=np.array(eval(input()))
-y=np.array(eval(input()))
+x=np.array(eval(input('X values: ')))
+y=np.array(eval(input('Y values: ')))
 
 x_mean=np.mean(x)
 y_mean=np.mean(y)
-n,d=0,0
+num=0
+denom=0
 
-for i in range(1,len(x)+1):
-    n+=(x[i-1]-x_mean)*(y[i-1]-y_mean)
-    d+=(x[i-1]-x_mean)**2
+for i in range(len(x)):
+  num+=(x[i]-x_mean)*(y[i]-y_mean)
+  denom+=(x[i]-x_mean)**2
 
-m=n/d
-b=y_mean-(m*x_mean)
-y_pred=m*x+b
-print(y_pred)
-2
+m=num/denom
+
+b=y_mean*x_mean
+
+print('Slope: ',m)
+print('Y-intercept: ',b)
+
+y_predicted=m*x+b #y = mx + c
+print('Predicted values: ',y_predicted)
+
 plt.scatter(x,y)
-plt.plot(x,y_pred,color='red')
-plt.xlabel('Hours Studied')
-plt.ylabel('Marks Scored')
-plt.title('Linear Reggression Graph')
+plt.plot(x,y_predicted,color='red')
+plt.title('LINEAR REGRESSION GRAPH')
 plt.show()
 ```
 
