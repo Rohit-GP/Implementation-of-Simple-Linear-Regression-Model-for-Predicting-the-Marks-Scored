@@ -57,7 +57,7 @@ plt.show()
 
 ## Output:
 
-![Screenshot 2025-04-17 090448](https://github.com/user-attachments/assets/8135be2d-5d93-4984-867b-497c2ee09e09)
+![Screenshot 2025-04-17 091230](https://github.com/user-attachments/assets/5ec579d2-6557-4b30-b9d8-f99d6d71c603)
 
 ## Result:
 Thus the Simple Linear Regression was implemented for predicting the marks scored using python programming.
