@@ -5,7 +5,7 @@ To implement a simple Linear Regression Model for predicting the marks scored.
 ## Equipments Required:
 Hardware – PCs
 
-Anaconda – Google Colab
+Software - Google Colab
 
 ## Algorithm
 1. Get the independent variable X(hours studied) and dependent variable Y(marks scored).
@@ -24,11 +24,9 @@ Developed by: Rohit GP
 RegisterNumber: 24900185
 
 ```
-import numpy as np
-import matplotlib.pyplot as plt
-
-x=np.array(eval(input('X values: ')))
-y=np.array(eval(input('Y values: ')))
+df=pd.read_csv('/content/student_scores.csv')
+x=df['Hours'].values
+y=df['Scores'].values
 
 x_mean=np.mean(x)
 y_mean=np.mean(y)
@@ -41,7 +39,7 @@ for i in range(len(x)):
 
 m=num/denom
 
-b=y_mean*x_mean
+b = y_mean - m * x_mean
 
 print('Slope: ',m)
 print('Y-intercept: ',b)
@@ -52,12 +50,14 @@ print('Predicted values: ',y_predicted)
 plt.scatter(x,y)
 plt.plot(x,y_predicted,color='red')
 plt.title('LINEAR REGRESSION GRAPH')
+plt.xlabel('Hours Studied')    
+plt.ylabel('Scores Obtained')  
 plt.show()
 ```
 
 ## Output:
 
-![Screenshot 2025-04-13 122440](https://github.com/user-attachments/assets/f6163f6a-4e46-4235-8c1a-9a799bf00bf1)
+![Screenshot 2025-04-17 090448](https://github.com/user-attachments/assets/8135be2d-5d93-4984-867b-497c2ee09e09)
 
 ## Result:
 Thus the Simple Linear Regression was implemented for predicting the marks scored using python programming.
